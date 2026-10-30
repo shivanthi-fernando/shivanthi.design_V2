@@ -18,7 +18,8 @@ Theme: scrapbook-inspired editorial collage. Palette: blush pink, lilac, kraft b
 - Fixed sticker navbar on torn cream paper, appears on scroll; "Shivanthi." slides in left. Order: Home, Work, About Me, Writings, Contact, For You. Scroll-spy moves the pink circle.
 - Radio top-right (small, faded): pink button = piano, purple = lo-fi, same button stops. Lilac note "Let’s make this tour a little more fun! Press play!" shows until first click, then on hover only; moves below navbar when scrolled.
 - Hero: "Hi, I’m / Shivanthi." highlight headline, paragraph, rotating work carousel (7 designs, dots) with "Click to see all my work", portrait sticker + "Click to know more about me" / "or" / kraft "email me" copy chip.
-- Selected work: tabs My Designs / My Case Studies (placeholder); large view + 4 thumbs, auto-rotate, dots, click-to-enlarge lightbox.
+- Hero carousel uses assets/work/For Hero/hero-1–6.png; Selected work uses assets/work/design-1–7.png. Image URLs carry ?v=N for cache-busting — bump N when images are replaced under the same names.
+- Selected work: tabs My Designs / My Case Studies (placeholder) / Working with AI (intro, process cards, "Where I step in", "What I’m exploring", lilac closing note); large view + 4 thumbs, auto-rotate, dots, click-to-enlarge lightbox.
 - About me: 2 paragraphs + primary "Let’s have a call" (opens cal.com/shivanthi) / secondary email copy button; framed photo + sticker column: Work experience, UX community, Life beyond the screen, Fun Fact: I’m happiest when there’s something to organize. Each opens a full-page overlay with back button + "More about me" sticker rail.
   - Work experience: company cards with logos (assets/logos), 99x groups two roles.
   - UX community: text + 5-photo collage (assets/community/c1–c5).

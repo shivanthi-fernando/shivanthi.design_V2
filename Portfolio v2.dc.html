@@ -271,6 +271,10 @@ a:hover{color:#D9628F}
           <svg viewBox="0 0 140 56" preserveAspectRatio="none" style="position:absolute;left:-8px;top:-6px;width:calc(100% + 16px);height:calc(100% + 12px);overflow:visible;pointer-events:none" fill="none" stroke="#D9628F" stroke-linecap="round"><g filter="url(#pencil)"><path pathLength="1" stroke-width="2" d="M22 34C12 16 58 5 98 8c30 3 40 20 24 33-18 13-76 13-98 4C8 38 10 22 38 13" style="stroke-dasharray:1 3;stroke-dashoffset:{{ tabCasesDash }};transition:stroke-dashoffset .6s ease"></path><path pathLength="1" stroke-width="1.2" opacity=".55" d="M26 37C14 20 56 8 100 11c28 3 36 19 20 30-18 11-74 11-94 2C10 37 14 24 40 16" style="stroke-dasharray:1 3;stroke-dashoffset:{{ tabCasesDash }};transition:stroke-dashoffset .7s ease .05s"></path></g></svg>
           <span style="position:relative">My Case Studies</span>
         </button>
+        <button onClick="{{ showAi }}" style="position:relative;padding:8px 16px;border:none;background:none;cursor:pointer;font-family:'Caveat Brush',cursive;font-size:26px;line-height:1;color:#221C1E;white-space:nowrap">
+          <svg viewBox="0 0 140 56" preserveAspectRatio="none" style="position:absolute;left:-8px;top:-6px;width:calc(100% + 16px);height:calc(100% + 12px);overflow:visible;pointer-events:none" fill="none" stroke="#D9628F" stroke-linecap="round"><g filter="url(#pencil)"><path pathLength="1" stroke-width="2" d="M22 34C12 16 58 5 98 8c30 3 40 20 24 33-18 13-76 13-98 4C8 38 10 22 38 13" style="stroke-dasharray:1 3;stroke-dashoffset:{{ tabAiDash }};transition:stroke-dashoffset .6s ease"></path><path pathLength="1" stroke-width="1.2" opacity=".55" d="M26 37C14 20 56 8 100 11c28 3 36 19 20 30-18 11-74 11-94 2C10 37 14 24 40 16" style="stroke-dasharray:1 3;stroke-dashoffset:{{ tabAiDash }};transition:stroke-dashoffset .7s ease .05s"></path></g></svg>
+          <span style="position:relative">Working with AI</span>
+        </button>
       </div>
       <sc-if value="{{ isDesignsTab }}" hint-placeholder-val="{{ true }}">
       <div onMouseEnter="{{ galleryEnter }}" onMouseLeave="{{ galleryLeave }}" style="margin-top:20px;display:grid;grid-template-columns:{{ galleryCols }};gap:clamp(18px,3vw,40px);align-items:stretch">
@@ -360,6 +364,57 @@ a:hover{color:#D9628F}
           </div>
         </article>
       </div>
+      </sc-if>
+      <sc-if value="{{ isAiTab }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:28px">
+        <div style="position:relative;display:flex;flex-direction:column;gap:36px">
+        
+        <div style="position:relative;padding:clamp(28px,4vw,44px) clamp(20px,4vw,52px) clamp(30px,4vw,48px);border-radius:6px;background:#FFFFFF;box-shadow:0 0 0 1px #EFE3D3,0 1px 1.5px rgba(74,52,40,.2),0 14px 28px rgba(74,52,40,.12);display:flex;flex-direction:column;gap:22px">
+          <p style="margin:0;max-width:62ch;font-size:17px;line-height:1.7;text-wrap:pretty">{{ aiIntro }}</p>
+        </div>
+        <div style="position:relative;display:flex;flex-direction:column;gap:36px">
+          
+          <div style="position:relative;padding:clamp(28px,4vw,44px) clamp(20px,4vw,52px) clamp(30px,4vw,48px);border-radius:6px;background:#FFFFFF;box-shadow:0 0 0 1px #EFE3D3,0 1px 1.5px rgba(74,52,40,.2),0 14px 28px rgba(74,52,40,.12);display:flex;flex-direction:column;gap:22px">
+            
+            <h3 style="margin:0;font-family:'Fredoka',sans-serif;font-weight:500;font-size:clamp(23px,2.2vw,28px);line-height:1.2">Where AI fits into my process</h3>
+            <div style="position:relative;display:grid;grid-template-columns:{{ aiProcCols }};gap:34px 28px;padding:12px 2px 4px">
+              <sc-for list="{{ aiProc }}" as="it" hint-placeholder-count="4">
+                <div style="position:relative;padding:26px 22px 26px;border-radius:4px;background:{{ it.paper }};box-shadow:0 0 0 1px rgba(74,52,40,.08),0 1px 1.5px rgba(74,52,40,.22),0 10px 20px rgba(74,52,40,.12);transform:rotate({{ it.rot }});display:flex;flex-direction:column;gap:12px;transition:transform .25s ease" style-hover="transform:rotate(0deg) translateY(-4px)">
+                  <span style="flex:none;width:48px;height:48px;border-radius:50%;background:#FCFAF7;box-shadow:0 0 0 1.5px #221C1E;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="#221C1E" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><g filter="url(#pencil)"><path d="{{ it.d }}"></path></g></svg></span>
+                  <span style="font-family:'Caveat Brush',cursive;font-size:27px;line-height:1">{{ it.name }}</span>
+                  <span style="font-size:15px;line-height:1.6;text-wrap:pretty">{{ it.body }}</span>
+                  <svg aria-hidden="true" width="30" height="16" viewBox="0 0 30 16" fill="none" stroke="#4A3F42" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;top:50%;right:-30px;margin-top:-8px;opacity:{{ it.arrowOp }}"><g filter="url(#pencil)"><path d="M2 9C10 5 18 11 26 8M21 3L27 8 21 13"></path></g></svg>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="position:relative;padding:clamp(28px,4vw,44px) clamp(20px,4vw,52px) clamp(30px,4vw,48px);border-radius:6px;background:#FFFFFF;box-shadow:0 0 0 1px #EFE3D3,0 1px 1.5px rgba(74,52,40,.2),0 14px 28px rgba(74,52,40,.12);display:flex;flex-direction:column;gap:22px">
+            
+            <h3 style="margin:0;font-family:'Fredoka',sans-serif;font-weight:500;font-size:clamp(23px,2.2vw,28px);line-height:1.2">Where I step in</h3>
+            <p style="margin:-12px 0 0;font-family:'Shantell Sans',cursive;font-weight:400;font-size:15px;line-height:1.5;color:#221C1E">AI can help generate options. I decide which ones are worth pursuing, and why.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:0 40px">
+              <sc-for list="{{ aiStepList }}" as="it" hint-placeholder-count="4">
+                <div style="display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-top:1.5px dashed #E3D4BF"><span aria-hidden="true" style="flex:none;width:10px;height:10px;margin-top:8px;border-radius:50%;background:{{ it.bg }};box-shadow:0 0 0 1.5px #221C1E"></span><span style="font-size:16px;line-height:1.6;text-wrap:pretty">{{ it.t }}</span></div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="position:relative;padding:clamp(28px,4vw,44px) clamp(20px,4vw,52px) clamp(30px,4vw,48px);border-radius:6px;background:#FFFFFF;box-shadow:0 0 0 1px #EFE3D3,0 1px 1.5px rgba(74,52,40,.2),0 14px 28px rgba(74,52,40,.12);display:flex;flex-direction:column;gap:22px">
+            
+            <h3 style="margin:0;font-family:'Fredoka',sans-serif;font-weight:500;font-size:clamp(23px,2.2vw,28px);line-height:1.2">What I’m exploring</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:0 40px">
+              <sc-for list="{{ aiExpList }}" as="it" hint-placeholder-count="4">
+                <div style="display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-top:1.5px dashed #E3D4BF"><span aria-hidden="true" style="flex:none;width:10px;height:10px;margin-top:8px;border-radius:50%;background:{{ it.bg }};box-shadow:0 0 0 1.5px #221C1E"></span><span style="font-size:16px;line-height:1.6;text-wrap:pretty">{{ it.t }}</span></div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="position:relative;padding:clamp(28px,4vw,36px) clamp(20px,4vw,48px);border-radius:6px;background-color:#E6DCF3;text-align:center">
+            
+            <p style="margin:0;font-family:'Caveat Brush',cursive;font-size:clamp(28px,3vw,36px);line-height:1.15">I work with AI, but I don’t outsource my thinking.</p>
+            <p style="margin:14px auto 0;max-width:56ch;font-size:16px;line-height:1.7">{{ aiClosing }}</p>
+          </div>
+        </div>
+      </div>
+        </div>
       </sc-if>
     </section>
   </sc-if>
@@ -694,7 +749,7 @@ a:hover{color:#D9628F}
               <div style="margin-top:8px;max-width:760px;display:flex;flex-direction:column;gap:22px">
                 <div style="display:flex;flex-direction:column;gap:12px;padding:22px 26px 24px;border-radius:8px;background:#FFFDF9;box-shadow:0 0 0 1px #EFE3D3,0 1px 1.5px rgba(74,52,40,.18),0 8px 16px rgba(74,52,40,.1);transform:rotate(-.4deg)">
                   <h3 style="margin:0;font-family:'Caveat Brush',cursive;font-weight:400;font-size:clamp(24px,2.2vw,30px);line-height:1.05;color:#221C1E">At 99x, that looks like...</h3>
-                  <p style="margin:0;font-size:clamp(16px,1.3vw,18px);line-height:1.6;color:#221C1E;text-wrap:pretty">Through Culture Hub, the internal community at 99x, I’ve been involved in organising company events in very different ways. For Karaoke Night, I took responsibility for the decorations, working with interns and an external vendor to bring the setup together. For Clash of Xians, I’ve been the main point of communication between the organising committee and the house captains, making sure information and requirements move clearly between both sides.</p>
+                  <p style="margin:0;font-size:clamp(16px,1.3vw,18px);line-height:1.6;color:#221C1E;text-wrap:pretty">Through Culture Hub, the internal community at 99x, I’ve been involved in organising company events in very different ways. For Karaoke Night, I took responsibility for the decorations, working with external vendor to bring the setup together. For Clash of Xians, I’ve been the main point of communication between the organising committee and the house captains, making sure information and requirements move clearly between both sides.</p>
                 </div>
                 <div style="display:flex;flex-direction:column;gap:12px;padding:22px 26px 24px;border-radius:8px;background:#FFFDF9;box-shadow:0 0 0 1px #EFE3D3,0 1px 1.5px rgba(74,52,40,.18),0 8px 16px rgba(74,52,40,.1);transform:rotate(.4deg)">
                   <h3 style="margin:0;font-family:'Caveat Brush',cursive;font-weight:400;font-size:clamp(24px,2.2vw,30px);line-height:1.05;color:#221C1E">Before that, there was AIESEC.</h3>
@@ -814,7 +869,7 @@ class Component extends DCLogic {
   aboutRef = React.createRef();
   S = 190;
 
-  componentDidMount() { this.onResize(); setTimeout(this.initMotion, 60); this.heroT = setInterval(() => { if (!this.state.lightbox && this.inView('01 Hero') && this.state.caseIdx == null && this.state.subPage == null && !this.state.menuOpen) this.setState(s => ({ heroWork: ((s.heroWork || 0) + 1) % this.workCount })); }, 3500); this.startAuto(); this.firstAct = () => { this.setState({ tipDone: true }); document.removeEventListener('click', this.firstAct, true); }; document.addEventListener('click', this.firstAct, true); window.addEventListener('scroll', this.onScroll, { passive: true }); this.onScroll(); window.addEventListener('resize', this.onResize); this.onResize(); this.paintScratch(); }
+  componentDidMount() { this.onResize(); setTimeout(this.initMotion, 60); this.heroT = setInterval(() => { if (!this.state.lightbox && this.inView('01 Hero') && this.state.caseIdx == null && this.state.subPage == null && !this.state.menuOpen) this.setState(s => ({ heroWork: ((s.heroWork || 0) + 1) % this.heroCount })); }, 3500); this.startAuto(); this.firstAct = () => { this.setState({ tipDone: true }); document.removeEventListener('click', this.firstAct, true); }; document.addEventListener('click', this.firstAct, true); window.addEventListener('scroll', this.onScroll, { passive: true }); this.onScroll(); window.addEventListener('resize', this.onResize); this.onResize(); this.paintScratch(); }
   componentDidUpdate(prev, prevState) { this.motionUpdate(prevState || {});
     if ((prev.revealMode ?? 'scratch') !== (this.props.revealMode ?? 'scratch')) {
       this.setState({ cleared: false, d: 30, peeled: false }, () => this.paintScratch());
@@ -1007,6 +1062,7 @@ class Component extends DCLogic {
   writeTitles = ['Simplifying User Interfaces with the Law of Proximity', 'The Importance of Miller’s Law for UX Design', 'Optimizing the User Interaction with Fitt’s Law', 'Using Hick’s Law to Simplify User Decisions', 'Use of Color Psychology to Enhance User Experience in Mobile Apps'];
   thumbsRef = React.createRef();
   workCount = 7;
+  heroCount = 6;
   startAuto() { clearInterval(this.autoT); this.autoT = setInterval(() => { if (!this.state.galleryHover && !this.state.lightbox && this.inView('02 Work') && this.state.caseIdx == null && this.state.subPage == null && !this.state.menuOpen && (this.state.tab || 'designs') === 'designs') this.setWork(((this.state.work || 0) + 1) % this.workCount); }, 4000); }
   setWork(i) {
     this.setState({ work: i });
@@ -1162,12 +1218,19 @@ class Component extends DCLogic {
       tipOpacity: (this.state.vw ?? 1200) < 640 ? 0 : !this.state.tipDone || (this.state.radioHover && !this.state.playing) ? 1 : 0, tipY: !this.state.tipDone || (this.state.radioHover && !this.state.playing) ? '0px' : '-6px',
       tipTop: this.state.scrolled ? '138px' : '104px', tipTitle: 'Let’s make this tour a little more fun! Press play!',
       openLightbox: this.openLightbox, closeLightbox: this.closeLightbox, lbNext: this.lbNext, lbPrev: this.lbPrev, stopProp: (e) => e.stopPropagation(),
-      lightboxOpen: !!this.state.lightbox, lbWorks: Array.from({ length: this.workCount }, (_, i) => ({ src: 'assets/work/design-' + (i + 1) + '.png', label: 'Project ' + (i + 1), disp: (this.state.work || 0) === i ? 'block' : 'none' })), lightboxSrc: 'assets/work/design-' + ((this.state.work || 0) + 1) + '.png', lightboxLabel: 'Project ' + ((this.state.work || 0) + 1),
-      isDesignsTab: (this.state.tab || 'designs') === 'designs', isCasesTab: this.state.tab === 'cases',
+      lightboxOpen: !!this.state.lightbox, lbWorks: Array.from({ length: this.workCount }, (_, i) => ({ src: 'assets/work/design-' + (i + 1) + '.png?v=2', label: 'Project ' + (i + 1), disp: (this.state.work || 0) === i ? 'block' : 'none' })), lightboxSrc: 'assets/work/design-' + ((this.state.work || 0) + 1) + '.png?v=2', lightboxLabel: 'Project ' + ((this.state.work || 0) + 1),
+      isDesignsTab: (this.state.tab || 'designs') === 'designs', isCasesTab: this.state.tab === 'cases', isAiTab: this.state.tab === 'ai', tabAiDash: this.state.tab === 'ai' ? 0 : 1, showAi: () => this.setState({ tab: 'ai' }),
+      ...(() => { const bgs = ['#F9D3E0', '#E6DCF3', '#E9D8BC', '#FCF3E2']; return {
+        aiIntro: 'I use AI to explore possibilities, challenge my thinking, and move from ideas to something tangible faster. But understanding the problem and deciding what makes sense still take human judgment.',
+        aiClosing: 'AI helps me explore, test, and build faster. My role is to bring context, ask better questions, challenge the output, and make decisions that serve the people using the product.',
+        aiProc: [['Explore', 'I use it to understand unfamiliar domains, investigate possibilities, and challenge my assumptions.', 'M27 10a17 17 0 1 0 0.01 0M39 39L56 56M18 22a10 10 0 0 1 8-6'], ['Make sense', 'It helps me organise information, spot patterns, and explore alternative approaches.', 'M12 14a5 5 0 1 0 0.01 0M50 12a5 5 0 1 0 0.01 0M32 48a5 5 0 1 0 0.01 0M16 18L29 44M46 16L35 44M17 14H45'], ['Make', 'I turn ideas into flows, prototypes, UI explorations, and working implementations.', 'M12 52L16 38 44 10 54 20 26 48zM40 14L50 24M12 52L24 49'], ['Refine', 'I review alternatives, find gaps, and iterate until the solution holds up.', 'M50 26A20 20 0 0 0 14 22M14 12V22H24M14 38A20 20 0 0 0 50 42M50 52V42H40']].map(([name, body, d], i) => ({ name, body, d, bg: bgs[i], paper: '#F3EEFA', tape: i % 2 ? 'rgba(242,167,195,.85)' : 'rgba(200,181,230,.85)', tapeRot: ['-4deg', '3deg', '-2deg', '4deg'][i], rot: (this.state.vw ?? 1200) >= 560 ? ['-1deg', '.8deg', '-.6deg', '1deg'][i] : '0deg', arrowOp: i < 3 && (this.state.vw ?? 1200) >= 1100 ? 1 : 0 })),
+        aiProcCols: (this.state.vw ?? 1200) >= 1100 ? 'repeat(4,minmax(0,1fr))' : (this.state.vw ?? 1200) >= 560 ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,1fr)',
+        aiStepList: ['Understanding the real problem and its context', 'Recognising what AI has misunderstood or overlooked', 'Balancing user needs, business goals, and technical constraints', 'Making trade-offs and choosing the right direction', 'Validating the output instead of accepting it blindly', 'Taking ownership of the final experience'].map(t => ({ t, bg: '#F2A7C3' })),
+        aiExpList: ['Working beyond traditional Figma workflows', 'Using Claude and Claude Code to explore and build interfaces', 'Testing how AI can support prototyping and iteration', 'Learning to turn design intent into working experiences'].map(t => ({ t, bg: '#C8B5E6' })) }; })(),
       tabDesignsDash: (this.state.tab || 'designs') === 'designs' ? 0 : 1, tabCasesDash: this.state.tab === 'cases' ? 0 : 1,
       showDesigns: () => this.setState({ tab: 'designs' }), showCases: () => this.setState({ tab: 'cases' }),
       heroOpen: () => { this.setState({ work: this.state.heroWork || 0, tab: 'designs' }); this.goNext(); },
-      heroWorks: Array.from({ length: this.workCount }, (_, i) => { const on = (this.state.heroWork || 0) === i; return { src: 'assets/work/design-' + (i + 1) + '.png', label: 'Project ' + (i + 1), op: on ? 1 : 0, dotW: on ? '22px' : '8px', dotBg: on ? '#F2A7C3' : '#FCF3E2', onClick: () => this.setState({ heroWork: i }) }; }),
+      heroWorks: Array.from({ length: this.heroCount }, (_, i) => { const on = (this.state.heroWork || 0) === i; return { src: 'assets/work/For Hero/hero-' + (i + 1) + '.png?v=2', label: 'Project ' + (i + 1), op: on ? 1 : 0, dotW: on ? '22px' : '8px', dotBg: on ? '#F2A7C3' : '#FCF3E2', onClick: () => this.setState({ heroWork: i }) }; }),
       subRef0: this.subRefs[0], subRef1: this.subRefs[1], subRef2: this.subRefs[2], subRef3: this.subRefs[3], subRef4: this.subRefs[4],
       pageRef: this.pageRef, closePage: this.closePage,
       pageOpen: this.state.subPage != null, pageTitle: ['Fun Fact: I’m happiest when there’s something to organize', 'UX community', 'Life beyond the screen', 'Currently curious about', 'Work experience'][this.state.subPage ?? 1],
@@ -1182,13 +1245,13 @@ class Component extends DCLogic {
       thumbsRef: this.thumbsRef, galleryEnter: this.galleryEnter, galleryLeave: this.galleryLeave,
       works: Array.from({ length: this.workCount }, (_, i) => {
         const on = (this.state.work || 0) === i;
-        return { src: 'assets/work/design-' + (i + 1) + '.png', label: 'Project ' + (i + 1), op: on ? 1 : 0,
+        return { src: 'assets/work/design-' + (i + 1) + '.png?v=2', label: 'Project ' + (i + 1), op: on ? 1 : 0,
           thumbOp: on ? 1 : 0.72, tf: on ? 'rotate(0deg) scale(1.03)' : 'rotate(' + (i % 2 ? 1.5 : -1.5) + 'deg)',
           ring: on ? '0 0 0 3px #F2A7C3,0 1px 1.5px rgba(74,52,40,.35),0 8px 14px rgba(74,52,40,.24)' : '0 0 0 1px #EADBC4,0 1px 1.5px rgba(74,52,40,.3),0 5px 9px rgba(74,52,40,.16)',
           dotW: on ? '28px' : '10px', dotBg: on ? '#F2A7C3' : '#FCF3E2',
           onClick: () => { this.setWork(i); this.startAuto(); } };
       }),
-      thumbs: [1, 2, 3, 4].map(k => { const i = ((this.state.work || 0) + k) % this.workCount; return { src: 'assets/work/design-' + (i + 1) + '.png', label: 'Show project ' + (i + 1), thumbOp: 1, tf: 'rotate(' + (k % 2 ? -1.5 : 1.5) + 'deg)', ring: '0 0 0 1px #EADBC4,0 1px 1.5px rgba(74,52,40,.3),0 5px 9px rgba(74,52,40,.16)', onClick: () => { this.setWork(i); this.startAuto(); } }; }),
+      thumbs: [1, 2, 3, 4].map(k => { const i = ((this.state.work || 0) + k) % this.workCount; return { src: 'assets/work/design-' + (i + 1) + '.png?v=2', label: 'Show project ' + (i + 1), thumbOp: 1, tf: 'rotate(' + (k % 2 ? -1.5 : 1.5) + 'deg)', ring: '0 0 0 1px #EADBC4,0 1px 1.5px rgba(74,52,40,.3),0 5px 9px rgba(74,52,40,.16)', onClick: () => { this.setWork(i); this.startAuto(); } }; }),
       letsCall: () => window.open('https://cal.com/shivanthi', '_blank', 'noopener'), aboutEmailClick: () => this.copyEmail(), aboutEmailLabel: this.state.copied ? 'copied!' : 'wscsfernando@gmail.com',
       copyEmail: this.copyEmail, copied: !!this.state.copied, notCopied: !this.state.copied,
       ...Object.fromEntries(this.writeUrls.map((u, i) => { const on = this.state.wDrag === i, fly = this.state.wFly === i, back = this.state.wBack === i, o = fly ? this.state.wFlyOff : on ? (this.state.wOff || [0, 0]) : [0, 0]; return ['wc' + i, { t: o[0] + 'px ' + o[1] + 'px', pegT: (-o[0]) + 'px ' + (-o[1]) + 'px', pegR: on || fly ? '28deg' : [-8, 6, -5, 8, -6][i] + 'deg', rot: fly ? '24deg' : on ? Math.max(-12, Math.min(12, o[0] / 14)) + 'deg' : '0deg', op: fly ? 0 : 1, d: on || back ? '0s' : fly ? '.7s cubic-bezier(.5,0,.75,0)' : '.45s cubic-bezier(.3,1.4,.5,1)', z: on || fly ? 5 : 1, cur: on ? 'grabbing' : 'grab', label: 'Drag to open article on Medium', down: (e) => this.wcDown(i, e), move: (e) => this.wcMove(i, e), up: () => this.wcUp(i), key: (e) => { if (e.key === 'Enter') window.open(u, '_blank', 'noopener'); } }]; })),
