@@ -1063,7 +1063,7 @@ class Component extends DCLogic {
   writeTitles = ['Simplifying User Interfaces with the Law of Proximity', 'The Importance of Miller’s Law for UX Design', 'Optimizing the User Interaction with Fitt’s Law', 'Using Hick’s Law to Simplify User Decisions', 'Use of Color Psychology to Enhance User Experience in Mobile Apps'];
   thumbsRef = React.createRef();
   workCount = 7;
-  heroCount = 6;
+  heroCount = 5;
   startAuto() { clearInterval(this.autoT); this.autoT = setInterval(() => { if (!this.state.galleryHover && !this.state.lightbox && this.inView('02 Work') && this.state.caseIdx == null && this.state.subPage == null && !this.state.menuOpen && (this.state.tab || 'designs') === 'designs') this.setWork(((this.state.work || 0) + 1) % this.workCount); }, 4000); }
   setWork(i) {
     this.setState({ work: i });
@@ -1231,7 +1231,7 @@ class Component extends DCLogic {
       tabDesignsDash: (this.state.tab || 'designs') === 'designs' ? 0 : 1, tabCasesDash: this.state.tab === 'cases' ? 0 : 1,
       showDesigns: () => this.setState({ tab: 'designs' }), showCases: () => this.setState({ tab: 'cases' }),
       heroOpen: () => { this.setState({ work: this.state.heroWork || 0, tab: 'designs' }); this.goNext(); },
-      heroWorks: Array.from({ length: this.heroCount }, (_, i) => { const on = (this.state.heroWork || 0) === i; return { src: 'assets/work/For Hero/hero-' + (i + 1) + '.png?v=4', label: 'Project ' + (i + 1), op: on ? 1 : 0, dotW: on ? '22px' : '8px', dotBg: on ? '#F2A7C3' : '#FCF3E2', onClick: () => this.setState({ heroWork: i }) }; }),
+      heroWorks: Array.from({ length: this.heroCount }, (_, i) => { const on = (this.state.heroWork || 0) === i; return { src: 'assets/work/For Hero/hero-' + (i + 1) + '.png?v=6', label: 'Project ' + (i + 1), op: on ? 1 : 0, dotW: on ? '22px' : '8px', dotBg: on ? '#F2A7C3' : '#FCF3E2', onClick: () => this.setState({ heroWork: i }) }; }),
       subRef0: this.subRefs[0], subRef1: this.subRefs[1], subRef2: this.subRefs[2], subRef3: this.subRefs[3], subRef4: this.subRefs[4],
       pageRef: this.pageRef, closePage: this.closePage,
       pageOpen: this.state.subPage != null, pageTitle: ['Fun Fact: I’m happiest when there’s something to organize', 'UX community', 'Life beyond the screen', 'Currently curious about', 'Work experience'][this.state.subPage ?? 1],
