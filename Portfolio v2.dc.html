@@ -1219,7 +1219,7 @@ class Component extends DCLogic {
       tipOpacity: (this.state.vw ?? 1200) < 640 ? 0 : !this.state.tipDone || (this.state.radioHover && !this.state.playing) ? 1 : 0, tipY: !this.state.tipDone || (this.state.radioHover && !this.state.playing) ? '0px' : '-6px',
       tipTop: this.state.scrolled ? '138px' : '104px', tipTitle: 'Let’s make this tour a little more fun! Press play!',
       openLightbox: this.openLightbox, closeLightbox: this.closeLightbox, lbNext: this.lbNext, lbPrev: this.lbPrev, stopProp: (e) => e.stopPropagation(),
-      lightboxOpen: !!this.state.lightbox, lbWorks: Array.from({ length: this.workCount }, (_, i) => ({ src: 'assets/work/design-' + (i + 1) + '.png?v=4', label: 'Project ' + (i + 1), disp: (this.state.work || 0) === i ? 'block' : 'none' })), lightboxSrc: 'assets/work/design-' + ((this.state.work || 0) + 1) + '.png?v=4', lightboxLabel: 'Project ' + ((this.state.work || 0) + 1),
+      lightboxOpen: !!this.state.lightbox, lbWorks: Array.from({ length: this.workCount }, (_, i) => ({ src: 'assets/work/design-' + (i + 1) + '.png?v=5', label: 'Project ' + (i + 1), disp: (this.state.work || 0) === i ? 'block' : 'none' })), lightboxSrc: 'assets/work/design-' + ((this.state.work || 0) + 1) + '.png?v=5', lightboxLabel: 'Project ' + ((this.state.work || 0) + 1),
       isDesignsTab: (this.state.tab || 'designs') === 'designs', isCasesTab: this.state.tab === 'cases', isAiTab: this.state.tab === 'ai', tabAiDash: this.state.tab === 'ai' ? 0 : 1, showAi: () => this.setState({ tab: 'ai' }),
       ...(() => { const bgs = ['#F9D3E0', '#E6DCF3', '#E9D8BC', '#FCF3E2']; return {
         aiIntro: 'I use AI to explore possibilities, challenge my thinking, and move from ideas to something tangible faster. But understanding the problem and deciding what makes sense still take human judgment.',
@@ -1231,7 +1231,7 @@ class Component extends DCLogic {
       tabDesignsDash: (this.state.tab || 'designs') === 'designs' ? 0 : 1, tabCasesDash: this.state.tab === 'cases' ? 0 : 1,
       showDesigns: () => this.setState({ tab: 'designs' }), showCases: () => this.setState({ tab: 'cases' }),
       heroOpen: () => { this.setState({ work: this.state.heroWork || 0, tab: 'designs' }); this.goNext(); },
-      heroWorks: Array.from({ length: this.heroCount }, (_, i) => { const on = (this.state.heroWork || 0) === i; return { src: 'assets/work/For Hero/hero-' + (i + 1) + '.png?v=6', label: 'Project ' + (i + 1), op: on ? 1 : 0, dotW: on ? '22px' : '8px', dotBg: on ? '#F2A7C3' : '#FCF3E2', onClick: () => this.setState({ heroWork: i }) }; }),
+      heroWorks: Array.from({ length: this.heroCount }, (_, i) => { const on = (this.state.heroWork || 0) === i; return { src: 'assets/work/For Hero/hero-' + (i + 1) + '.png?v=7', label: 'Project ' + (i + 1), op: on ? 1 : 0, dotW: on ? '22px' : '8px', dotBg: on ? '#F2A7C3' : '#FCF3E2', onClick: () => this.setState({ heroWork: i }) }; }),
       subRef0: this.subRefs[0], subRef1: this.subRefs[1], subRef2: this.subRefs[2], subRef3: this.subRefs[3], subRef4: this.subRefs[4],
       pageRef: this.pageRef, closePage: this.closePage,
       pageOpen: this.state.subPage != null, pageTitle: ['Fun Fact: I’m happiest when there’s something to organize', 'UX community', 'Life beyond the screen', 'Currently curious about', 'Work experience'][this.state.subPage ?? 1],
@@ -1246,13 +1246,13 @@ class Component extends DCLogic {
       thumbsRef: this.thumbsRef, galleryEnter: this.galleryEnter, galleryLeave: this.galleryLeave,
       works: Array.from({ length: this.workCount }, (_, i) => {
         const on = (this.state.work || 0) === i;
-        return { src: 'assets/work/design-' + (i + 1) + '.png?v=4', label: 'Project ' + (i + 1), op: on ? 1 : 0,
+        return { src: 'assets/work/design-' + (i + 1) + '.png?v=5', label: 'Project ' + (i + 1), op: on ? 1 : 0,
           thumbOp: on ? 1 : 0.72, tf: on ? 'rotate(0deg) scale(1.03)' : 'rotate(' + (i % 2 ? 1.5 : -1.5) + 'deg)',
           ring: on ? '0 0 0 3px #F2A7C3,0 1px 1.5px rgba(74,52,40,.35),0 8px 14px rgba(74,52,40,.24)' : '0 0 0 1px #EADBC4,0 1px 1.5px rgba(74,52,40,.3),0 5px 9px rgba(74,52,40,.16)',
           dotW: on ? '28px' : '10px', dotBg: on ? '#F2A7C3' : '#FCF3E2',
           onClick: () => { this.setWork(i); this.startAuto(); } };
       }),
-      thumbs: [1, 2, 3, 4].map(k => { const i = ((this.state.work || 0) + k) % this.workCount; return { src: 'assets/work/design-' + (i + 1) + '.png?v=4', label: 'Show project ' + (i + 1), thumbOp: 1, tf: 'rotate(' + (k % 2 ? -1.5 : 1.5) + 'deg)', ring: '0 0 0 1px #EADBC4,0 1px 1.5px rgba(74,52,40,.3),0 5px 9px rgba(74,52,40,.16)', onClick: () => { this.setWork(i); this.startAuto(); } }; }),
+      thumbs: [1, 2, 3, 4].map(k => { const i = ((this.state.work || 0) + k) % this.workCount; return { src: 'assets/work/design-' + (i + 1) + '.png?v=5', label: 'Show project ' + (i + 1), thumbOp: 1, tf: 'rotate(' + (k % 2 ? -1.5 : 1.5) + 'deg)', ring: '0 0 0 1px #EADBC4,0 1px 1.5px rgba(74,52,40,.3),0 5px 9px rgba(74,52,40,.16)', onClick: () => { this.setWork(i); this.startAuto(); } }; }),
       letsCall: () => window.open('https://cal.com/shivanthi', '_blank', 'noopener'), aboutEmailClick: () => this.copyEmail(), aboutEmailLabel: this.state.copied ? 'copied!' : 'wscsfernando@gmail.com',
       copyEmail: this.copyEmail, copied: !!this.state.copied, notCopied: !this.state.copied,
       ...Object.fromEntries(this.writeUrls.map((u, i) => { const on = this.state.wDrag === i, fly = this.state.wFly === i, back = this.state.wBack === i, o = fly ? this.state.wFlyOff : on ? (this.state.wOff || [0, 0]) : [0, 0]; return ['wc' + i, { t: o[0] + 'px ' + o[1] + 'px', pegT: (-o[0]) + 'px ' + (-o[1]) + 'px', pegR: on || fly ? '28deg' : [-8, 6, -5, 8, -6][i] + 'deg', rot: fly ? '24deg' : on ? Math.max(-12, Math.min(12, o[0] / 14)) + 'deg' : '0deg', op: fly ? 0 : 1, d: on || back ? '0s' : fly ? '.7s cubic-bezier(.5,0,.75,0)' : '.45s cubic-bezier(.3,1.4,.5,1)', z: on || fly ? 5 : 1, cur: on ? 'grabbing' : 'grab', label: 'Drag to open article on Medium', down: (e) => this.wcDown(i, e), move: (e) => this.wcMove(i, e), up: () => this.wcUp(i), key: (e) => { if (e.key === 'Enter') window.open(u, '_blank', 'noopener'); } }]; })),
