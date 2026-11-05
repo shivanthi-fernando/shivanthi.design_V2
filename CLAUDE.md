@@ -7,7 +7,7 @@ Theme: scrapbook-inspired editorial collage. Palette: blush pink, lilac, kraft b
 - Never use block letters: no uppercase text, no "Chapter 01 · Hello"-style labels.
 - Never use DM Mono or any monospace font. Fonts: Caveat Brush (headings, name, labels), Shantell Sans (body, small text).
 - Headings all black ink; section titles sit on a pink washi-tape strip.
-- Stickers: die-cut look (cream #FCF3E2 rim + soft cocoa shadow), cartoon style, thick ink outlines.
+- Stickers: die-cut look (cream #FCF3E2 rim + soft cocoa shadow), cartoon style, thick ink outlines. Rim = `filter:url(#rim3)` (also #rim2/#rim4, defined next to #pencil) followed by the soft rgba drop-shadows — never the 4 offset cream drop-shadows (causes scroll lag).
 - Pencil-sketched arrows (graphite #4A3F42); hint notes in brown Caveat Brush (#8C735F).
 - Selected nav = pink #D9628F pencil circle.
 - Buttons: primary = light lilac #E6DCF3 sticker pill (no tilt); secondary = outline pill, warm-white fill; tertiary = kraft gift tag.
@@ -29,6 +29,8 @@ Theme: scrapbook-inspired editorial collage. Palette: blush pink, lilac, kraft b
 - Writings: 5 Medium article cards on a pencil clothesline with paperclips; drag a card off to open (flies right, opens new tab). Hick’s law + colour psychology links are placeholders (need full URLs).
 - Contact: torn cream crumpled paper (assets/crumple.svg) over lilac/kraft/cocoa scraps, headline "Building something new or making something better?" + buttons; "Find me on" kraft card with LinkedIn/Medium/Dribbble in brand colours .
 - For you: placeholder. Footer: © 2026 Shivanthi Fernando + back to top.
+
+- Link preview: og/twitter meta in Portfolio v2 <head> point to assets/og-image.png (1200×630), rendered from og-card.html with headless Chrome. Bump its ?v=N when re-rendered.
 
 ## Open items
 two Medium URLs, Culture Hub/AIESEC photos, Case studies, For you content.
